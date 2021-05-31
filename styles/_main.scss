@@ -1,0 +1,111 @@
+main {
+   
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-color: $primary-brown;
+    background-size: cover;
+
+}
+.services{
+    animation: 0.8s ease-in 0s 1 popup;
+    display: flex;
+    max-width: 450px;
+    flex-flow: column wrap;
+    margin:0 auto;
+    max-width: 100%;
+
+@include media(">=tablet"){
+	
+    flex-flow: row wrap;
+    align-items: flex-end; 
+    justify-content: space-evenly;
+   
+}
+
+  
+    &__service:first-child{
+        margin-top:500px;
+        
+
+    }
+    &__service {
+        display:grid;
+        grid-template-rows: 1fr min-content 1fr;
+        grid-row-gap: 10px;
+        background: cornsilk;
+        margin-bottom: 25px;
+        height: 250px;
+        padding: 30px 20px;
+        text-align: center;
+        margin:0 auto;
+        margin-bottom: 25px;
+        width: 90%;
+        &--white {
+            background: white;
+            color: $darker-blue;
+        
+        }
+        &--light-blue {
+            background: $light-blue;
+            color: white;
+        }
+        &--dark-blue {
+            background: $dark-blue;
+            color: white;
+
+        }
+        &--darker-blue {
+            background: $darker-blue;
+            color: white;
+
+        }
+        &--darkest-blue{
+            background: $darkest-blue;
+            color: white;
+
+        }
+        
+    @include media(">=tablet", "<=desktop") {
+        width: 39%;
+      }
+     @include media(">desktop"){
+        margin-top:500px;
+        width: 27%;
+        margin:15px;
+    }
+        
+      
+        &-img {
+            font-size: 80px;
+            color:white;
+        }
+        &-title {
+        align-self: center;
+        }
+
+        &-text {
+            align-self: center;
+        }
+        &-btn {
+            align-self: center;
+            color: white;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            margin: 0 auto;
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+            transition: 0.3s ease-out;
+            &:hover {
+                opacity: 80%;
+            }
+            &--darker-blue {
+                background: $darker-blue;
+            }
+        }
+    }
+}
